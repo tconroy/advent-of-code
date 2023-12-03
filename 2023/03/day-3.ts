@@ -20,7 +20,7 @@ const isAdjacentToSomeSymbol = (
 
     const gearIndex = line.indexOf('*', startBounds);
     const key = `${lineIndex}|${gearIndex}`;
-    console.log(key);
+
     return [key, num];
   }
 };
@@ -81,7 +81,7 @@ function getGearRatios(gearAdjacencyMap: Record<string, number[]>) {
 
 function main() {
   const numsAdjacentToSymbols = getNumsAdjacentToSymbols();
-  console.log(numsAdjacentToSymbols.gearAdjacencyMap);
+
   console.log({
     // expected: 553079
     part1: sum(numsAdjacentToSymbols.numsAdjacentToSymbols),
