@@ -24,13 +24,9 @@ function sumPoints(obj: WinningObj) {
 function sumCards(obj: WinningObj) {
   const cardInstances = new Array(Object.entries(obj).length).fill(1);
 
-  Object.entries(obj).forEach(([_cardName, cardObj], j) => {
-    const matchCount = cardObj.myWinningNumbers.length;
-
-    if (matchCount) {
-      for (let i = j + 1; i <= j + matchCount; i++) {
-        cardInstances[i] += cardInstances[j];
-      }
+  Object.entries(obj).forEach(([_cardName, { myWinningNumbers }], j) => {
+    for (let i = j + 1; i <= j + myWinningNumbers.length; i++) {
+      cardInstances[i] += cardInstances[j];
     }
   });
 
